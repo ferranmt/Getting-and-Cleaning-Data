@@ -1,4 +1,19 @@
-LINK PER A EL CODEBOOK:
+# GETTING AND CLEANING DATA COURSE PROJECT: CODEBOOK
+
+In this file, there is a description of the data used and the transformations performed to clean it. 
+
+- First, download the data from this link https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+- Alternatively, I have uploaded the raw dataset into this same Github repository, just in case the link breaks down.
+
+## RUN_ANALYSIS.R
+
+The file has the code to merge and clean the data set, obtaining the outcome asked by the instructors of the course, by creating a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+1. We merge the data. To do so, we read the train and test datasets, all of the files (x, y, subject) and store them in independent data frames. Then, we join the train and data tests using the rbind function.
+2. We extract only the measurements on the mean and standard deviation for each measurement. Storing the features dataset, getting values of mean and std and performing small changes to make the dataset more readable.
+3. We use descriptive activity names to name the activities in the data set, to associate each number with an activity. In the code, you can also see that we perform small changes to the names. Again, for the purpose of make things simpler.
+4. We label the datset with descriptive activity names: By changing the name of the variables in joinLabel and joinSubject, for activity and subject. Then we merge the 3 datasets we have and write out the 1st dataset, under the name of merged_data (a sample of this outcome can be also found in this repository).
+5. Now we have to create a second, independent tidy data set with the average of each variable for each activity and each subject. By performing calculations throuugh two loops, we obtain the final, clean dataset saved under a txt file named data_with_means.
 
 
-https://github.com/Xiaodan/Coursera-Getting-and-Cleaning-Data/tree/master/peer_assessment
+Ferran Martí
